@@ -48,6 +48,18 @@ class Dog
     breed=obj_row[2]
     dog=Dog.new(id: id, name: name, breed: breed)
     dog
+  end 
+  
+  def self.find_or_create_by(dog)
+    if !dog.empty?
+      dog
+    
+    
+    
+    
+    
+    
+    
     
   end 
   
