@@ -30,7 +30,9 @@ class Dog
     dog=Dog.new(hash_attributes)
     dog.save 
     dog 
-    
   end 
+  
+  def self.new_from_db
+  
   
 end 
