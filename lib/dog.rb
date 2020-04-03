@@ -23,16 +23,11 @@ class Dog
     sql="INSERT INTO dogs (name,breed) VALUES (?,?)"
     DB[:conn].execute(sql,self.name,self.breed)
     @id= DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
-    
-    self 
-
+    self
   end 
   
-  
-  
-  def update 
-    sql="UPDATE dogs SET name=?,breed=? WHERE id=?"
-    DB[:conn].execute(sql,self.name,self.breed,self.id)
+  def self.create(hash_attributes)
+    
   end 
   
 end 
