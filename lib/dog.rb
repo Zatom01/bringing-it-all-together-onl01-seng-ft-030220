@@ -3,7 +3,7 @@ class Dog
   attr_accessor :name, :breed, :id 
   
   
-  def initialize (name:,breed:,id: nil)
+  def initialize (id: nil,name:,breed:)
     @name=name
     @breed=breed
     @id=id 
@@ -32,7 +32,8 @@ class Dog
     dog 
   end 
   
-  def self.new_from_db
-  
+  def self.new_from_db(row)
+    dog=Dog.new(row[0],row[1],row[2])
+  end 
   
 end 
