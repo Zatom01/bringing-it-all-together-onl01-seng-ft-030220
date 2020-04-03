@@ -39,4 +39,18 @@ class Dog
     dog=Dog.new(id: id, name: name, breed: breed)
   end 
   
+  def self.find_by_id(id)
+    sql= "SELECT * FROM dogs WHERE id = ?"
+    DB[:conn].execute(sql,id)
+    obj_row=DB[:conn].execute("SELECT last_insert_rowid()")[0]
+    id=obj_row[0]
+    name=obj_row[1]
+    breed=obj_row[2]
+    dog=Dog.new(id: id, name: name, breed: breed)
+    dog
+    
+  end 
+  
+  
+  
 end 
